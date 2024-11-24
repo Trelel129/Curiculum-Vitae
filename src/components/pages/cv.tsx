@@ -22,8 +22,8 @@ const CV: React.FC = () => {
 
   return (
     <div className="bg-gray-900 text-gray-200 min-h-screen flex flex-col items-center p-10">
-      <div className="max-w-4xl w-full bg-gray-800 rounded-lg shadow-lg p-8">
-        <TitleName personName={"Ferry Nur Alfian Eka Putra"} />
+      <div className="w-7/12 bg-gray-800 rounded-lg shadow-lg p-8">
+        <TitleName>Ferry Nur Alfian Eka Putra</TitleName>
         <p className="text-lg mb-6">
           A highly motivated with a passion for web development and design.
         </p>

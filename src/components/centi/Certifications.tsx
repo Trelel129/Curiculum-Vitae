@@ -1,4 +1,5 @@
 import React from "react";
+import Points from "../mili/Points";
 
 interface CertificationsProps {
   showCertifications: boolean;
@@ -18,10 +19,12 @@ const Certifications: React.FC<CertificationsProps> = ({
         Certifications {showCertifications ? "-" : "+"}
       </h2>
       {showCertifications && (
-        <ul className="list-disc list-inside text-gray-400 mb-4">
-          <li>AWS Certified Developer - Associate</li>
-          <li>Certified Scrum Master</li>
-        </ul>
+        <div className="grid grid-cols-1 gap-4">
+          <Points
+            content="Not Available Yet"
+            description="I am still working on getting certifications."
+          />
+        </div>
       )}
     </div>
   );

@@ -1,9 +1,19 @@
 import React from "react";
+import Points from "../mili/Points";
 
 interface SkillsProps {
   showSkills: boolean;
   toggleSection: (section: string) => void;
 }
+
+const skillsData = [
+  { content: "HTML, CSS, Tailwind CSS" },
+  { content: "JavaScript, TypeScript" },
+  { content: "Ren.py" },
+  { content: "Basic SQL" },
+  { content: "Agile methodologies" },
+  { content: "Git" },
+];
 
 const Skills: React.FC<SkillsProps> = ({ showSkills, toggleSection }) => {
   return (
@@ -15,14 +25,11 @@ const Skills: React.FC<SkillsProps> = ({ showSkills, toggleSection }) => {
         Skills {showSkills ? "-" : "+"}
       </h2>
       {showSkills && (
-        <ul className="list-disc list-inside text-gray-400 mb-4">
-          <li>JavaScript, TypeScript, React, Node.js</li>
-          <li>HTML, CSS, Tailwind CSS</li>
-          <li>Ren.py</li>
-          <li>Basic SQL</li>
-          <li>Agile methodologies</li>
-          <li>Git</li>
-        </ul>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {skillsData.map((project, index) => (
+            <Points key={index} content={project.content} />
+          ))}
+        </div>
       )}
     </div>
   );

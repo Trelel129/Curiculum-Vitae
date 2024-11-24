@@ -1,10 +1,8 @@
 interface TitleNameProps {
-  personName: string;
+  children: React.ReactNode;
 }
 
-const TitleName: React.FC<TitleNameProps> = ({ personName }) => {
-  return (
-    <h1 className="text-4xl font-bold text-green-400 mb-4">{personName}</h1>
-  );
+const TitleName: React.FC<TitleNameProps> = ({ children }) => {
+  return <h1 className="text-4xl font-bold text-green-400 mb-4">{children}</h1>;
 };
 export default TitleName;
