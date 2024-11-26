@@ -26,8 +26,8 @@ const Skills: React.FC<SkillsProps> = ({ showSkills, toggleSection }) => {
       </h2>
       {showSkills && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {skillsData.map((project, index) => (
-            <Points key={index} content={project.content} />
+          {skillsData.map((skill, index) => (
+            <Points key={index} content={skill.content} />
           ))}
         </div>
       )}
