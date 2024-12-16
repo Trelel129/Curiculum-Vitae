@@ -1,9 +1,11 @@
 import React from "react";
 import Points from "../mili/Points";
+import { Palette } from "@mui/material/styles/createPalette";
 
 interface ProjectsProps {
   showProjects: boolean;
   toggleSection: (section: string) => void;
+  theme: Palette;
 }
 
 const projectsData = [
@@ -19,7 +21,11 @@ const projectsData = [
   },
 ];
 
-const Projects: React.FC<ProjectsProps> = ({ showProjects, toggleSection }) => {
+const Projects: React.FC<ProjectsProps> = ({
+  showProjects,
+  toggleSection,
+  theme,
+}) => {
   return (
     <div className="mb-6">
       <h2
@@ -35,6 +41,13 @@ const Projects: React.FC<ProjectsProps> = ({ showProjects, toggleSection }) => {
               key={index}
               content={project.content}
               description={project.description}
+              theme={{
+                borderColor: theme.divider,
+                bgColor: theme.background.paper,
+                hoverBgColor: theme.action.hover,
+                textColor: theme.text.primary,
+                subTextColor: theme.text.secondary,
+              }}
             />
           ))}
         </div>

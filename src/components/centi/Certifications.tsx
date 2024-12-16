@@ -1,14 +1,17 @@
 import React from "react";
 import Points from "../mili/Points";
+import { Palette } from "@mui/material/styles/createPalette"; // Add this line
 
 interface CertificationsProps {
   showCertifications: boolean;
   toggleSection: (section: string) => void;
+  theme: Palette;
 }
 
 const Certifications: React.FC<CertificationsProps> = ({
   showCertifications,
   toggleSection,
+  theme,
 }) => {
   return (
     <div className="mb-6">
@@ -23,6 +26,13 @@ const Certifications: React.FC<CertificationsProps> = ({
           <Points
             content="Not Available Yet"
             description="I am still working on getting certifications."
+            theme={{
+              borderColor: theme.divider,
+              bgColor: theme.background.paper,
+              hoverBgColor: theme.action.hover,
+              textColor: theme.text.primary,
+              subTextColor: theme.text.secondary,
+            }}
           />
         </div>
       )}
