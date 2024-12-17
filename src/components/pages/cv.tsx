@@ -7,7 +7,7 @@ import Education from "../centi/Educations";
 import Skills from "../centi/Skills";
 import Certifications from "../centi/Certifications";
 import Projects from "../centi/Projects";
-import { Container, Paper, Typography, Button } from "@mui/material";
+import { Container, Paper, Typography } from "@mui/material";
 import { themes, ThemeKey } from "../../themes";
 import { ThemeProvider } from "@mui/material/styles";
 
@@ -48,7 +48,6 @@ const CV: React.FC = () => {
           <Container
             maxWidth="md"
             sx={{
-              bgcolor: themes[theme].palette.background.default,
               color: "text.primary",
               py: 4,
             }}
@@ -58,12 +57,12 @@ const CV: React.FC = () => {
               sx={{
                 p: 4,
                 mb: 4,
-                bgcolor: themes[theme].palette.background.default,
+                bgcolor: themes[theme].palette.background.paper,
                 color: themes[theme].palette.text.primary,
               }}
             >
               <TitleName>Ferry Nur Alfian Eka Putra</TitleName>
-              <Typography variant="body1">
+              <Typography variant="body1" className="py-4">
                 A highly motivated with a passion for web development and
                 design.
               </Typography>
@@ -109,7 +108,7 @@ const CV: React.FC = () => {
                 </Typography>
               )}
             </Paper> */}
-            <div style={{ position: "absolute", top: "16px", right: "16px" }}>
+            <div className="fixed top-0 right-0 p-3">
               <Typography variant="body2" sx={{ mb: 1 }}>
                 Theme Provider
               </Typography>

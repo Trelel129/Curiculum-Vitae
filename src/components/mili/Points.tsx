@@ -1,6 +1,12 @@
+import SearchIcon from "@mui/icons-material/Search";
+import Link from "next/link";
+
 interface PointsProps {
   content: string;
+  linked?: boolean;
+  link?: URL;
   description?: string;
+  date?: Date;
   theme: {
     borderColor: string;
     bgColor: string;
@@ -10,7 +16,14 @@ interface PointsProps {
   };
 }
 
-const Points: React.FC<PointsProps> = ({ content, description, theme }) => {
+const Points: React.FC<PointsProps> = ({
+  content,
+  description,
+  theme,
+  linked,
+  link,
+  date,
+}) => {
   return (
     <div
       style={{
@@ -24,6 +37,16 @@ const Points: React.FC<PointsProps> = ({ content, description, theme }) => {
         {content}
       </h3>
       <p style={{ color: theme.subTextColor }}>{description}</p>
+      {date && (
+        <p style={{ color: theme.subTextColor }}>
+          {date?.toISOString().substr(0, 10)}
+        </p>
+      )}
+      {linked && (
+        <Link href={link?.toString() || ""}>
+          <SearchIcon />
+        </Link>
+      )}
     </div>
   );
 };

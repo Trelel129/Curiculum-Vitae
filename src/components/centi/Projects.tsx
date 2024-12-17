@@ -43,7 +43,7 @@ const Projects: React.FC<ProjectsProps> = ({
               description={project.description}
               theme={{
                 borderColor: theme.divider,
-                bgColor: theme.background.paper,
+                bgColor: theme.action.selected,
                 hoverBgColor: theme.action.hover,
                 textColor: theme.text.primary,
                 subTextColor: theme.text.secondary,
